@@ -7,6 +7,11 @@ public class Main {
 
     }
 
+    static void workingWithNestedHashMaps() {
+        HashMap<Integer, User> users = new HashMap<Integer, User>();
+        users.put(1, new User("max2002", "maximilian", 29));
+    }
+
     static void workingWithHashMap() {
         HashMap<String, String> cars = new HashMap<String, String>();
         cars.put("key1", "Audi 80");
@@ -43,7 +48,6 @@ public class Main {
             IO.println(car);
         }
     }
-
 
     static void controlStructures() {
         boolean isMyValueTrue = false;
