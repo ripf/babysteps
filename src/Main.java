@@ -1,8 +1,44 @@
+import java.io.*;
 import java.util.*;
 
 public class Main {
     static void main(String[] args) {
 
+        String filename = "demo.txt";
+        File myFile = new File(filename);
+        if (!myFile.exists()) {
+            try {
+                myFile.createNewFile();
+            } catch(Exception errorInfo) {
+                IO.println("File cannot be created");
+            }
+        }
+
+        try {
+            FileWriter fw = new FileWriter(myFile);
+            fw.write("This is the demo content of this file.");
+            fw.close();
+        } catch (IOException e) {
+            IO.println("File is not writable");
+        }
+
+        try {
+            Scanner fileScanner = new Scanner(myFile);
+            while(fileScanner.hasNextLine()) {
+                IO.println(fileScanner.nextLine());
+            }
+
+        } catch (FileNotFoundException e) {
+            IO.println("File is not readable");
+        } catch (IOException e) {
+            IO.println("File is not writable");
+        }
+
+        myFile.delete();
+
+    }
+
+    private static void workingWithInputs() {
         Scanner input = new Scanner(System.in);
 
         try {
