@@ -3,6 +3,12 @@ public class User {
     private String firstname;
     private int age;
 
+    /**
+     * This is the constructor for the User-class
+     * @param username
+     * @param firstname
+     * @param age
+     */
     public User(String username, String firstname, int age) {
         this.username = username;
         this.firstname = firstname;
