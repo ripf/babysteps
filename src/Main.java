@@ -1,10 +1,29 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class Main {
     static void main(String[] args) {
 
+        Scanner input = new Scanner(System.in);
+
+        try {
+            User fromInput = getFromInput(input);
+            IO.println(fromInput.getFirstname());
+        } catch (InputMismatchException e) {
+            IO.println("Fehlerhafte Eingabe!");
+        } catch (Exception e) {
+            IO.println("Ganz übler Fehler passiert! Ooops!");
+        }
+    }
+
+    private static User getFromInput(Scanner input) {
+        IO.print("Geben Sie den Benutzernamen ein: ");
+        String username = input.next();
+        IO.print("Geben Sie den Vornamen ein: ");
+        String firstname = input.next();
+        IO.print("Geben Sie das Alter ein: ");
+        int age = input.nextInt();
+
+        return new User(username, firstname, age);
     }
 
     static void workingWithNestedHashMaps() {
