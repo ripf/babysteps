@@ -1,10 +1,36 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Main {
     static void main() {
         //loops();
         //controlStructures();
+        //workingWithArrayList();
     }
+
+    static void workingWithArrayList() {
+        ArrayList<String> cars = new ArrayList<String>();
+        cars.add("Mustang");
+        cars.add("F-150");
+        cars.add("Dodge RAM 1500");
+
+        /*
+        Version 1 with a for counter loop
+         */
+        for (int i = 0; i < cars.size(); i++) {
+            IO.println(cars.get(i));
+        }
+
+        /*
+        Version 2 with an easier for loop syntax
+         */
+        for (String car: cars) {
+            IO.println(car);
+        }
+    }
+
+
+
+
 
     static void controlStructures() {
         boolean isMyValueTrue = false;
@@ -30,7 +56,6 @@ public class Main {
         }
 
     }
-
     static void loops() {
         // Single line comment
         /*
