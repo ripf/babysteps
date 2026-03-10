@@ -1,10 +1,26 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Main {
-    static void main() {
-        //loops();
-        //controlStructures();
-        //workingWithArrayList();
+    static void main(String[] args) {
+
+    }
+
+    static void workingWithHashMap() {
+        HashMap<String, String> cars = new HashMap<String, String>();
+        cars.put("key1", "Audi 80");
+
+        IO.println(cars.get("key1"));
+    }
+
+    static void workingWithHashSet() {
+        HashSet<String> cars = new HashSet<String>();
+        cars.add("Audi A4");
+        cars.add("BMW X1");
+        cars.add("BMW X1"); // Duplicate value, will not be added to the HashSet
+
+        IO.println(cars.size()); // Returns 2
     }
 
     static void workingWithArrayList() {
@@ -23,13 +39,10 @@ public class Main {
         /*
         Version 2 with an easier for loop syntax
          */
-        for (String car: cars) {
+        for (String car : cars) {
             IO.println(car);
         }
     }
-
-
-
 
 
     static void controlStructures() {
@@ -56,6 +69,7 @@ public class Main {
         }
 
     }
+
     static void loops() {
         // Single line comment
         /*
