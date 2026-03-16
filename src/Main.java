@@ -3,7 +3,16 @@ import java.util.*;
 
 public class Main {
     static void main(String[] args) {
+        String[] config = {"Bla"};
+        EmailService emailService = new EmailService(config);
 
+        SmsService smsService = new SmsService(config);
+
+        OrderManagerWithDI orderManager = new OrderManagerWithDI(smsService);
+
+    }
+
+    private static void workingWithFiles() {
         String filename = "demo.txt";
         File myFile = new File(filename);
         if (!myFile.exists()) {
@@ -35,7 +44,6 @@ public class Main {
         }
 
         myFile.delete();
-
     }
 
     private static void workingWithInputs() {
